@@ -42,25 +42,27 @@
 <body>
     <div class="container">
         <h3>FACTORIAL PROGRAM</h3>
-      <div><label>Enter your value:</label></div>
-    <div><input type="number" id="txt1"></div>
-    <button onclick="factorial()"> click here</button>
-    <div id="d1"></div>
+      
+    <label>Answer:</label><div id="d1"></div>
 </body>
 </html>
 <script>
 
-
-function factorial(){
-    let n = document.getElementById("txt1").value;
-    var i,num,f;
-    f=1;
-    for(i=1;i<=n;i++){
-        f=f*i;
-    }
-    i=i-1;
-    let answer="the factorial num " + i + " is:"+f;
-    document.getElementById("d1").innerHTML=answer;
+function factorial(x) {
+  if (x == 1 || x == 0) {
+    return x;
+  }
+  return x * factorial(x - 1);
 }
+
+const num = prompt("Enter number to find factorial of number :");
+if (num >= 0) {
+  const answer = "Factorial of " + num + " is " + factorial(num);
+  document.getElementById("d1").innerHTML = answer;
+} else {
+  const error = "Enter a positive number.";
+  document.getElementById("d1").innerHTML = error;
+}
+
 
 </script>
