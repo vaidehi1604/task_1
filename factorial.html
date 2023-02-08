@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin:0;
+            padding: 0;
+        }
+
+        .container{
+            display: flex;
+            margin: auto;
+            margin-top: 40px;
+            justify-content:center;
+            flex-direction: column;
+            width:500px;
+            height:180px;
+            text-align: center;
+            border-radius: 5px;
+            border:1px solid black;
+        }
+        button{
+            background-color: black;
+            color: white;
+            border:none;
+            margin:5px;
+            padding:4px;
+            width:80%;
+            margin:auto;
+
+        }
+        input{
+            width:80%;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>FACTORIAL PROGRAM</h3>
+      <div><label>Enter your value:</label></div>
+    <div><input type="number" id="txt1"></div>
+    <button onclick="factorial()"> click here</button>
+    <div id="d1"></div>
+</body>
+</html>
+<script>
+
+
+function factorial(){
+    let n = document.getElementById("txt1").value;
+    var i,num,f;
+    f=1;
+    for(i=1;i<=n;i++){
+        f=f*i;
+    }
+    i=i-1;
+    let answer="the factorial num " + i + " is:"+f;
+    document.getElementById("d1").innerHTML=answer;
+}
+
+</script>

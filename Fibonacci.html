@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+
+        .container{
+            display: flex;
+            margin: auto;
+            margin-top: 40px;
+            justify-content:center;
+            flex-direction: column;
+            width:500px;
+            height:180px;
+            text-align: center;
+            border-radius: 5px;
+            border:1px solid black;
+        }
+        button{
+            background-color: black;
+            color: white;
+            border:none;
+            margin:5px;
+            padding:4px;
+            width:80%;
+            margin:auto;
+
+        }
+        input{
+            width:80%;
+            margin:5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>FIBONACCI SERIES</h3>
+      <div><label>Enter your value:</label></div>
+    <div><input type="text" id="txt1"></div>
+    <button onclick="fib()"> click here</button>
+    ANSWER:<label id="lbl1"></label>
+</div>
+</body>
+<script>
+    var lbl1=document.getElementById("lbl1");
+    function fib(){
+    var n1=0;
+    var n2=1;
+    var f1=parseInt(txt1.value);
+    let txt=" ";
+//    document.write(n1+" ,");
+//    document.write(n2+", ");
+
+    for(var i=0;i<f1;i++){
+       txt+=n1+" , ";
+        n3=n1+n2;
+        n1=n2;
+        n2=n3;
+    }
+    lbl1.innerHTML=txt;
+
+
+    }
+
+</script>
+</html>
