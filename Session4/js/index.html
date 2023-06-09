@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #pink {
+        background-color: rgb(185, 170, 173);
+      }
+
+      .blue {
+        background-color: rgb(235, 236, 236);
+      }
+    </style>
+  </head>
+  <body id="pink">
+    <p class="blue">HELLO WORLD</p>
+    <div class="text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quod, quo
+      repudiandae nulla ipsum eaque quam labore earum officia minima veniam
+      ducimus error deserunt sapiente molestiae rerum mollitia aliquam! Error
+      reprehenderit vitae incidunt voluptas sapiente, aspernatur perspiciatis
+      consectetur earum nihil cumque aliquam et nam debitis a sunt, molestiae
+      veritatis cum?
+    </div>
+    <button id="btn">Toggle btn</button>
+    <button id="btn1">fade out</button>
+    <button id="btn2">fade in</button>
+    <button id="btn3">fade toggle</button>
+    <button id="btn4">fadeto</button>
+  </body>
+  <script src="/jquery-3.6.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+  <script>
+    //$(selector).action()
+    $(document).ready(function () {
+      $("p").click(function () {
+        console.log("you clicked on it");
+      });
+
+      $("p").on({
+        click: function () {
+          console.log("Thank you", this);
+        },
+        blur: function () {
+          console.log("mouse left", this);
+        },
+      });
+      $(".text").hide(1000, function () {
+        console.log("hidden");
+      });
+      $(".text").show(1000, function () {
+        console.log("show");
+      });
+      $("#btn").click(function () {
+        $(".text").toggle(1000);
+      });
+
+      $("#btn1").click(function () {
+        $(".text").fadeOut(1000);
+      });
+      $("#btn2").click(function () {
+        $(".text").fadeIn(1000);
+      });
+      $("#btn3").click(function () {
+        $(".text").fadeToggle(1000);
+      });
+      $("#btn4").click(function () {
+        $(".text").fadeTo(1000);
+      });
+
+   $(".text").slideUp(1000);
+   //slideDown()
+   //slideToggle
+   $(".text").animate({
+    opacity:0.2,
+    height:'180px',
+    color:'blue'},3000);
+//change text area value
+// $('#id').val('');   
+// remove only text
+// $('#id').empty();
+// remove element tag div 
+// $('#id').remove();
+$(".text").css('background-color','red');
+
+});
+
+
+  </script>
+</html>
